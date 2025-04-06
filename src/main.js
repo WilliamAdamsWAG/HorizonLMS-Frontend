@@ -1,6 +1,14 @@
 import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import ArcoVue from '@arco-design/web-vue'
+import App from "./App.vue"
+import router from './router/router'
+import '@arco-design/web-vue/dist/arco.css';
+import StudentForm from './components/StudentForm.vue';
 
-createApp(App).use(store).use(router).mount('#app')
+const app = createApp(App)
+
+app.use(ArcoVue)
+app.use(router)
+app.component('student-form', StudentForm)
+
+app.mount('#app')
