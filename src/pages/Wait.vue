@@ -2,7 +2,7 @@
 import { onMounted, ref, onBeforeUnmount } from 'vue';
 
 const
-    _install_ready=ref(false),
+    _install_ready=ref(true),
     _install_prompt=ref(null),
     _app_installed=ref(false)
 
