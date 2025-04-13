@@ -58,9 +58,9 @@
         "purpose": "maskable"
     },
     {
-      "src": "icons/icon_1024.webp",
+      "src": "icons/icon_1024.svg",
       "sizes": "1024x1024",
-      "type": "image/webp"
+      "type": "image/svg"
     }
   ],
   "screenshots": [
