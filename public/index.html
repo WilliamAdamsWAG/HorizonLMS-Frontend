@@ -7,8 +7,87 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link rel="manifest" href="/manifest.json">
+    <style>
+      .install-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: none;
+  align-items: center;
+  gap: 20px;
+  z-index: 1000;
+}
+
+#installButton {
+  background: #2196F3;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#closeBanner {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+    </style>
   </head>
   <body>
+    <div id="installBanner" class="install-banner">
+      <p>Установите наше приложение для лучшего опыта!</p>
+      <button id="installButton">Установить</button>
+      <button id="closeBanner">×</button>
+    </div>
     <div id="app"></div>
   </body>
+
+  <script>
+    let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  showInstallBanner();
+});
+const installBanner = document.getElementById('installBanner');
+const installButton = document.getElementById('installButton');
+const closeBanner = document.getElementById('closeBanner');
+
+function showInstallBanner() {
+  const isDismissed = localStorage.getItem('installBannerDismissed');
+  if (!isDismissed && deferredPrompt) {
+    installBanner.style.display = 'flex';
+  }
+}
+
+installButton.addEventListener('click', async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') {
+      localStorage.setItem('installBannerDismissed', 'true');
+    }
+    deferredPrompt = null;
+    installBanner.style.display = 'none';
+  }
+});
+
+closeBanner.addEventListener('click', () => {
+  localStorage.setItem('installBannerDismissed', 'true');
+  installBanner.style.display = 'none';
+});
+
+// Проверка, если приложение уже установлено
+window.addEventListener('appinstalled', () => {
+  localStorage.setItem('installBannerDismissed', 'true');
+});
+</script>
 </html>
