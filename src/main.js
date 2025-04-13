@@ -8,6 +8,7 @@ import StudentForm from './components/StudentForm.vue';
 const app = createApp(App)
 
 app.use(ArcoVue)
+app.use(router)
 
 app.component('student-form', StudentForm)
 

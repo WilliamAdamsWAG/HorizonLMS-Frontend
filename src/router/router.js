@@ -6,7 +6,7 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
     {
         path: '/',
-        component: Wait
+        component: Main
     },
     {
         path: '/login',
@@ -14,7 +14,7 @@ const routes = [
     },
     {
         path: '/source',
-        component: Wait
+        component: Main
     },
     {
         path: '/app',

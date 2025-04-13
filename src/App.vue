@@ -1,6 +1,5 @@
 <template>
     <div class="app">
-        t
         <router-view></router-view>
     </div>
 </template>
@@ -11,6 +10,6 @@
 
 <style>
 html {
-    background: rgb(242, 243, 245);
+    background: #1A1C1B;
 }
 </style>
