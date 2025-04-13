@@ -16,7 +16,7 @@
     "orientation": "portrait",
     "icons": [
     {
-      "src": "icons/icon_32.webp",
+      "src": "https://storage.horizon-lms.ru/images/icons/icon_32.webp",
       "sizes": "32x32",
       "type": "image/webp",
         "purpose": "maskable"
@@ -61,6 +61,11 @@
       "src": "icons/icon_1024.svg",
       "sizes": "1024x1024",
       "type": "image/svg"
+    },
+    {
+      "src": "icons/icon_1024.webp",
+      "sizes": "1024x1024",
+      "type": "image/webp"
     }
   ],
   "screenshots": [
