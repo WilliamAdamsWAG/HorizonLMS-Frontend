@@ -1,5 +1,5 @@
 <template>
-    <NButton>test</NButton>
+    test
 </template>
   
 
