@@ -9,14 +9,28 @@
           }"
         ><a-typography-text style="color: whitesmoke; font-size: 16pt;">HorizonLMS</a-typography-text></div>
       </a-menu-item>
-      <a-button type="primary" @click="handleClick">Open Drawer</a-button>
-      <a-drawer :width="340" :visible="visible" @ok="handleOk" @cancel="handleCancel" unmountOnClose>
+      <a-button type="primary" @click="handleClick" style="position: absolute; right: 5%;background-color: #00B2FF;">☰</a-button>
+      <a-drawer :width="340" :visible="visible" :hide-cancel="true" @ok="handleOk" @cancel="handleCancel" unmountOnClose>
     <template #title>
       Title
     </template>
-    <div>You can customize modal body text by the current situation. This modal will be closed immediately once you
-      press the OK button.
+    <div>
+        <div class="grid-demo-background">
+    <a-space direction="vertical" :size="16" style="display: block;">
+      <a-row class="grid-demo">
+        <a-col :span="24" :style="{ padding: '12px' }">
+                <a-button type="primary" style="height: 7vh; width: 100%;">
+      <template #icon>
+        <icon-delete />
+      </template>
+      <!-- Use the default slot to avoid extra spaces -->
+      <template #default>Delete</template>
+    </a-button>
+        </a-col>
+      </a-row>
+      </a-space></div>
     </div>
+    <icon-list />
   </a-drawer>
     </a-menu>
   </div>
