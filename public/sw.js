@@ -35,7 +35,7 @@ self.addEventListener('activate', (event) => {
     }).then(() => self.clients.claim()) // Контроль над всеми клиентами
   );
 });
-
+/*
 // Обработка сетевых запросов
 self.addEventListener('fetch', (event) => {
   // Пропускаем POST-запросы и другие не-GET
@@ -62,7 +62,7 @@ self.addEventListener('fetch', (event) => {
           });
       })
   );
-});
+});*/
 
 // Фоновая синхронизация (требует разрешения)
 self.addEventListener('sync', (event) => {
