@@ -3,6 +3,8 @@
     "short_name": "HorizonLMS",
  
     "name": "HorizonLMS",
+    "description": "Модильное приложение для HorizonLMS",
+    "categories": ["education"],
  
     "start_url":"/",
  
@@ -14,13 +16,27 @@
     "orientation": "portrait",
     "icons": [
     {
-      "src": "icons/icon-32.png",
+      "src": "icons/icon_32.webp",
       "sizes": "32x32",
-      "type": "image/png"
+      "type": "image/webp",
+        "purpose": "maskable"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "icons/icon_512.webp",
       "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screens/1.png",
+      "sizes": "810x1440",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screens/1.png",
+      "sizes": "810x1440",
       "type": "image/png"
     }
   ]
